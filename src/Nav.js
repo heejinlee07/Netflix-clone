@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavBlock, NavLogo, NavAvatar } from "./Nav.styles";
+import { NavBlock, NavBlack, NavLogo, NavAvatar } from "./Nav.styles";
 
 function Nav() {
   const [show, handleShow] = useState(false);
@@ -20,16 +20,31 @@ function Nav() {
   //  <div className={`nav ${show && "nav__black"}`}>
   return (
     // if show=true -> nav__black
-    <NavBlock>
-      <NavLogo
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/400px-Netflix_2015_logo.svg.png"
-        alt="Netflix logo"
-      />
-      <NavAvatar
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
-        alt="Netflix logo"
-      />
-    </NavBlock>
+    <>
+      {!show ? (
+        <NavBlock>
+          <NavLogo
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/400px-Netflix_2015_logo.svg.png"
+            alt="Netflix logo"
+          />
+          <NavAvatar
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
+            alt="Netflix logo"
+          />
+        </NavBlock>
+      ) : (
+        <NavBlack>
+          <NavLogo
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/400px-Netflix_2015_logo.svg.png"
+            alt="Netflix logo"
+          />
+          <NavAvatar
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
+            alt="Netflix logo"
+          />
+        </NavBlack>
+      )}
+    </>
   );
 }
 

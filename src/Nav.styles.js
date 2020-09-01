@@ -15,6 +15,17 @@ export const NavBlock = styled.div`
 `;
 
 export const NavBlack = styled.div`
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  padding: 20px;
+  z-index: 1;
+
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
   background-color: #111;
 `;
 

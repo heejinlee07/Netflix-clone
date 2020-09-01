@@ -1,14 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 ${reset}
   *{
     box-sizing: border-box;
   }
 
   body{
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,6 +16,11 @@ ${reset}
   }
   
   img, a img {
+    outline: none;
+    border: none;
+  }
+
+  button {
     outline: none;
     border: none;
   }
@@ -48,4 +52,4 @@ ${reset}
 
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;

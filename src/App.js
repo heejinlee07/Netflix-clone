@@ -5,6 +5,7 @@ import Row from "./Row";
 import requests from "./requests";
 import Banner from "./Banner";
 import Nav from "./Nav";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const AppBlock = styled.div`
   background-color: #111;
@@ -29,6 +30,7 @@ function App() {
         <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
         <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
       </AppBlock>
+      <GlobalStyles />
     </BrowserRouter>
   );
 }

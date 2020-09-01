@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import requests from "./requests";
-import "./Banner.css";
+import {
+  BannerHeader,
+  BannerContents,
+  BannerTitle,
+  BannerDescription,
+  BannerButtons,
+  BannerButton,
+  BannerFadeSection,
+} from "./Banner.styles";
 
 function Banner() {
   // everytime appear random movie
@@ -35,28 +43,21 @@ function Banner() {
   }
 
   return (
-    <header
-      className="banner"
-      style={{
-        backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-        backgroundPosition: "center center",
-      }}
+    <BannerHeader
+      imageUrl={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
     >
-      <div className="banner__contents">
-        <h1 className="banner__title">
+      <BannerContents>
+        <BannerTitle>
           {movie?.title || movie?.name || movie?.original_name}
-        </h1>
-        <div className="banner__buttons">
-          <button className="button banner__button">Play</button>
-          <button className="button banner__button">My List</button>
-        </div>
-        <h1 className="banner__description">
-          {truncate(movie?.overview, 150)}
-        </h1>
-      </div>
-      <div className="banner--fadeBottom" />
-    </header>
+        </BannerTitle>
+        <BannerButtons>
+          <BannerButton>Play</BannerButton>
+          <BannerButton>My List</BannerButton>
+        </BannerButtons>
+        <BannerDescription>{truncate(movie?.overview, 150)}</BannerDescription>
+      </BannerContents>
+      <BannerFadeSection />
+    </BannerHeader>
   );
 }
 
