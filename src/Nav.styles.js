@@ -1,4 +1,6 @@
-.nav {
+import styled from "styled-components";
+
+export const NavBlock = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -10,22 +12,22 @@
 
   transition-timing-function: ease-in;
   transition: all 0.5s;
-}
+`;
 
-.nav__black {
+export const NavBlack = styled.div`
   background-color: #111;
-}
+`;
 
-.nav__logo {
+export const NavLogo = styled.img`
   position: fixed;
   left: 20px;
   width: 80px;
   object-fit: contain;
-}
+`;
 
-.nav__avatar {
+export const NavAvatar = styled.img`
   position: fixed;
   right: 20px;
   width: 30px;
   object-fit: contain;
-}
+`;
